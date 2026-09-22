@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>雪見の朝里川・小樽・札幌 温泉旅</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c2531; --ink-soft:#4a5568; --snow:#f6f8fb; --paper:#ffffff;
+    --night:#16233b; --night-2:#22334f; --frost:#dbe6f2; --line:#d9e2ee;
+    --lamp:#e0a04a; --lamp-deep:#c97e2c; --pine:#3f6b57;
+    --card:#ffffff; --bg:#eef3f8; --shadow:0 6px 22px rgba(22,35,59,.10);
+    box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#eaf1fb; --ink-soft:#a9b8cc; --snow:#0f1826; --paper:#16202f;
+      --frost:#26364f; --line:#26344a; --card:#16202f; --bg:#0b1220; --shadow:0 6px 22px rgba(0,0,0,.45);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#eaf1fb; --ink-soft:#a9b8cc; --snow:#0f1826; --paper:#16202f;
+    --frost:#26364f; --line:#26344a; --card:#16202f; --bg:#0b1220; --shadow:0 6px 22px rgba(0,0,0,.45);
+  }
+  *{box-sizing:inherit}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+  body{margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Zen Kaku Gothic New",-apple-system,"Hiragino Sans","Yu Gothic",sans-serif;
+    line-height:1.75; font-size:16px; letter-spacing:.01em; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:640px; margin:0 auto; padding:0 18px 64px}
+
+  .hero{position:relative; margin:0 -18px 26px; padding:64px 26px 40px;
+    background:linear-gradient(160deg,#0d1626 0%,#1a2740 55%,#22334f 100%); color:#f6f8fb; overflow:hidden;}
+  .hero .snow{position:absolute; inset:0; pointer-events:none; opacity:.9}
+  .hero .snow span{position:absolute; top:-12px; color:#cfe0f2; opacity:.7; animation:fall linear infinite}
+  @media (prefers-reduced-motion: reduce){.hero .snow span{animation:none; display:none}}
+  @keyframes fall{to{transform:translateY(115%) translateX(10px)}}
+  .ki{font-family:"Shippori Mincho",serif; font-size:13px; letter-spacing:.3em; color:#9db6d6; margin:0 0 14px}
+  .hero h1{font-family:"Shippori Mincho",serif; font-weight:700; margin:0; font-size:clamp(26px,7vw,38px); line-height:1.32; text-shadow:0 2px 18px rgba(0,0,0,.35);}
+  .hero .dates{margin:18px 0 0; font-size:15px; color:#dbe6f2}
+  .hero .dates b{color:#f6f8fb; font-weight:700}
+  .hero .route-line{margin:6px 0 0; font-size:13.5px; color:#9db6d6}
+
+  .day{margin:0 0 30px}
+  .day-head{display:flex; align-items:baseline; gap:12px; position:sticky; top:0; z-index:5; background:var(--bg); padding:14px 2px 12px; margin:0 -2px;}
+  .day-num{font-family:"Shippori Mincho",serif; font-weight:700; font-size:34px; line-height:1; color:var(--lamp-deep); flex:none;}
+  .day-meta .d{font-family:"Shippori Mincho",serif; font-size:18px; font-weight:600; margin:0}
+  .day-meta .s{margin:2px 0 0; font-size:13px; color:var(--ink-soft)}
+
+  .flight{display:flex; align-items:center; gap:14px; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px 18px; margin:2px 0 18px; box-shadow:var(--shadow);}
+  .flight .pl{flex:none; width:44px; height:44px; border-radius:12px; background:linear-gradient(160deg,#1a2740,#22334f); color:#f6f8fb; display:flex; align-items:center; justify-content:center; font-size:20px}
+  .flight .froute{font-family:"Shippori Mincho",serif; font-size:16px; font-weight:600}
+  .flight .froute b{color:var(--lamp-deep)}
+  .flight .fsub{font-size:12px; color:var(--ink-soft); margin-top:3px}
+  .flight .fchips{margin-top:6px; display:flex; flex-wrap:wrap; gap:6px}
+  .flight .fchips span{font-size:11.5px; background:var(--frost); color:var(--night-2); border-radius:999px; padding:2px 9px; font-weight:600}
+
+  .tl{position:relative; margin:0; padding:4px 0 0 0; list-style:none}
+  .tl::before{content:""; position:absolute; left:75px; top:8px; bottom:8px; width:2px; background:var(--line)}
+  .ev{position:relative; display:grid; grid-template-columns:60px 1fr; gap:30px; padding:0 0 20px 0}
+  .ev .t{font-family:"Shippori Mincho",serif; font-size:15px; font-weight:600; color:var(--ink); text-align:right; padding-top:2px; white-space:nowrap;}
+  .ev .t small{display:block;font-size:11px;color:var(--ink-soft);font-weight:400}
+  .ev .body{position:relative}
+  .ev .body::before{content:""; position:absolute; left:-20px; top:6px; width:11px; height:11px; border-radius:50%; background:var(--paper); border:2.5px solid var(--lamp); box-shadow:0 0 0 3px var(--bg);}
+  .ev.warm .body::before{border-color:var(--lamp); background:var(--lamp)}
+  .ev h3{margin:0; font-size:15.5px; font-weight:700; line-height:1.5}
+  .ev p{margin:4px 0 0; font-size:13.5px; color:var(--ink-soft); line-height:1.7}
+  .ev .tag{display:inline-block; font-size:11.5px; color:var(--pine); background:rgba(63,107,87,.12); border-radius:999px; padding:1px 9px; margin:6px 6px 0 0; font-weight:500}
+  .ev .tag.move{color:var(--night-2); background:var(--frost)}
+  .ev .tag.warmtag{color:var(--lamp-deep); background:rgba(224,160,74,.16)}
+
+  .card{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px 18px 6px; margin:6px 0 0; box-shadow:var(--shadow);}
+  .card h4{font-family:"Shippori Mincho",serif; margin:0 0 4px; font-size:16px; display:flex; align-items:center; gap:8px}
+  .card .sub{margin:0 0 12px; font-size:12px; color:var(--ink-soft)}
+  .card dl{margin:0; display:grid; grid-template-columns:auto 1fr; gap:0}
+  .card dt{font-size:12.5px; color:var(--lamp-deep); font-weight:700; padding:9px 12px 9px 0; border-top:1px solid var(--line); white-space:nowrap}
+  .card dd{font-size:13px; margin:0; padding:9px 0; border-top:1px solid var(--line); color:var(--ink)}
+  .card dl > dt:first-of-type, .card dl > dt:first-of-type + dd{border-top:none}
+  .card .btn{display:inline-block; margin:12px 0 12px; font-size:13px; font-weight:700; color:#fff; background:var(--lamp-deep); border-radius:10px; padding:9px 16px; text-decoration:none}
+  .card .cnote{font-size:11px; color:var(--ink-soft); line-height:1.6; margin:0 0 14px; padding:8px 10px; background:var(--frost); border-radius:8px}
+
+  .lead{font-size:13.5px; color:var(--ink-soft); margin:2px 0 8px; line-height:1.8}
+  .lead b{color:var(--ink)}
+  .mini{font-size:12px; color:var(--ink-soft); margin:8px 0 0; text-align:center; background:rgba(224,160,74,.10); border-radius:10px; padding:8px 12px}
+  .cands{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:6px 18px; margin:10px 0 0; box-shadow:var(--shadow)}
+  .cands .item{padding:12px 0; border-top:1px solid var(--line)}
+  .cands .item:first-child{border-top:none}
+  .cands .item h5{margin:0; font-size:14px; font-weight:700}
+  .cands .item p{margin:3px 0 0; font-size:12.5px; color:var(--ink-soft); line-height:1.65}
+  .cands .item .star{color:var(--lamp-deep)}
+  .subhead{font-family:"Shippori Mincho",serif; font-size:13px; font-weight:600; color:var(--lamp-deep); margin:16px 0 0}
+
+  .note{background:linear-gradient(180deg,rgba(224,160,74,.10),rgba(224,160,74,.04)); border:1px solid rgba(224,160,74,.35); border-radius:14px; padding:14px 16px; margin:8px 0 0; font-size:13px; color:var(--ink);}
+  .note b{color:var(--lamp-deep)}
+  .tip{text-align:center; font-size:12.5px; color:var(--ink-soft); background:var(--frost); border-radius:12px; padding:12px 14px; margin:18px 0 0; line-height:1.7}
+  .foot{margin:22px 0 0; padding-top:16px; border-top:1px solid var(--line); font-size:11.5px; color:var(--ink-soft); line-height:1.7}
+  .divider{font-family:"Shippori Mincho",serif; color:var(--frost); text-align:center; margin:0 0 18px; font-size:13px; letter-spacing:.3em}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="snow" aria-hidden="true">
+      <span style="left:8%;font-size:12px;animation-duration:11s">&#10052;</span>
+      <span style="left:24%;font-size:9px;animation-duration:8s;animation-delay:2s">&#10052;</span>
+      <span style="left:44%;font-size:14px;animation-duration:13s;animation-delay:1s">&#10052;</span>
+      <span style="left:63%;font-size:8px;animation-duration:9s;animation-delay:3s">&#10052;</span>
+      <span style="left:80%;font-size:12px;animation-duration:12s;animation-delay:.5s">&#10052;</span>
+      <span style="left:92%;font-size:10px;animation-duration:10s;animation-delay:2.5s">&#10052;</span>
+    </div>
+    <p class="ki">HOKKAIDO WINTER</p>
+    <h1>雪見の朝里川・小樽・札幌 温泉旅</h1>
+    <p class="dates"><b>2026.12.11（金）〜 13（日）</b>　2泊3日 &#9924;</p>
+    <p class="route-line">札幌 &middot; 小樽 &middot; 朝里川温泉</p>
+  </header>
+
+  <!-- DAY 1 -->
+  <section class="day">
+    <div class="day-head">
+      <div class="day-num">1</div>
+      <div class="day-meta"><p class="d">12月11日（金）</p><p class="s">いざ北海道へ！札幌でランチ＆観光 &#128031;&#10024;</p></div>
+    </div>
+
+    <div class="flight">
+      <div class="pl">&#9992;</div>
+      <div class="fmain">
+        <div class="froute">羽田 <b>08:15</b> &rarr; 新千歳 <b>09:55</b></div>
+        <div class="fsub">SKY705 ／ スカイマーク</div>
+        <div class="fchips"><span>予約番号 1085</span><span>座席 9A</span></div>
+      </div>
+    </div>
+
+    <p class="lead"><b>ざっくりこんな流れ &#9992;</b><br>10時ごろ新千歳でお迎え &rarr; ランチ＆観光（順番は自由！）&rarr; 夜は大通のイルミ＆〆パフェ &rarr; 大通付近のホテルで1泊 &#127769;</p>
+
+    <ul class="tl">
+      <li class="ev">
+        <div class="t">09:55</div>
+        <div class="body"><h3>新千歳空港 着・お迎え &#128075;</h3><p>合流したら、車で札幌方面へ出発！ &#128663;</p><span class="tag move">車</span></div>
+      </li>
+      <li class="ev">
+        <div class="t">昼〜<br>午後</div>
+        <div class="body"><h3>ランチ＆観光（順番は自由に！）&#127837;</h3><p>早めにランチ→午後たっぷり観光でも、先に観光してから遅めランチでもOK。お店はその日の気分で&#9834;（観光は下の候補から）</p><span class="tag">気分で</span><span class="tag">選ぶ</span></div>
+      </li>
+      <li class="ev warm">
+        <div class="t">夕〜夜</div>
+        <div class="body"><h3>大通のイルミネーション &amp; 〆パフェ &#10024;&#127848;</h3><p>12/11はさっぽろホワイトイルミネーション開催中！大通をおさんぽ。すすきので夜パフェ（佐藤／INITIAL）も&#9834;</p><span class="tag warmtag">イルミ</span><span class="tag warmtag">甘いもの</span></div>
+      </li>
+      <li class="ev warm">
+        <div class="t">泊</div>
+        <div class="body"><h3>札幌大通付近のホテルへ &#127970;</h3><p>朝食が美味しいみたい&#9834; ゆっくり休んで明日にそなえよう&#128564;</p></div>
+      </li>
+    </ul>
+
+    <p class="mini">&#127873; どこかでお土産も買いたい♪（新千歳空港・大通・白い恋人パークなどで）</p>
+
+    <p class="subhead">午後〜夜の観光候補（気分でどれでも！）</p>
+    <div class="cands">
+      <div class="item"><h5>&#127775; 藻岩山ロープウェイ</h5><p>日本新三大夜景＆「恋人の聖地」。山頂に幸せの鐘＆ハート南京錠。冬期11:00〜22:00。夜景デートの本命&#10024;</p></div>
+      <div class="item"><h5>&#127876; 大通公園（ホワイトイルミネーション）</h5><p>12/11は開催中！16:30〜22:00・無料。ミュンヘン・クリスマス市も同時開催で、あったかい屋台も&#9749;</p></div>
+      <div class="item"><h5>&#128017; 羊ヶ丘展望台</h5><p>クラーク像と真っ白な雪原。冬はチューブそりや無料ミニスキー、マシュマロ焼き・線香花火まで！9:00〜18:00。</p></div>
+      <div class="item"><h5>&#127851; 白い恋人パーク</h5><p>チョコ工場見学と欧風ガーデン。冬の夜はイルミがきらきら。焼きたてお菓子やソフトも&#127846; 10:00〜18:00。</p></div>
+    </div>
+  </section>
+
+  <p class="divider">&#10052;　&#10052;　&#10052;</p>
+
+  <!-- DAY 2 -->
+  <section class="day">
+    <div class="day-head">
+      <div class="day-num">2</div>
+      <div class="day-meta"><p class="d">12月12日（土）</p><p class="s">札幌の朝ごはん &rarr; 小樽さんぽ &rarr; 宏楽園へ &#9832;</p></div>
+    </div>
+    <ul class="tl">
+      <li class="ev">
+        <div class="t">朝</div>
+        <div class="body"><h3>ホテルで朝食 &rarr; おさんぽ or のんびり &#9749;</h3><p>評判の朝ごはんをゆっくり楽しんだら、大通あたりをおさんぽ、or お部屋でのんびり&#9834; 11時ごろ出発！</p><span class="tag">ゆったり</span></div>
+      </li>
+      <li class="ev">
+        <div class="t">11:00<small>約45分</small></div>
+        <div class="body"><h3>札幌 &rarr; 小樽（車・札樽道）</h3><p>高速でひとっ走り&#128663; 中心部まで約45分。</p><span class="tag move">ドライブ</span></div>
+      </li>
+      <li class="ev">
+        <div class="t">12:00</div>
+        <div class="body"><h3>小樽でお昼 &#127843;</h3><p>お寿司はもちろん、小樽ならではのグルメも！ その日の気分で&#9834;（下の候補から）</p><span class="tag">選ぶ</span></div>
+      </li>
+      <li class="ev">
+        <div class="t">13:30</div>
+        <div class="body"><h3>小樽運河・堺町通りさんぽ &#128247;</h3><p>運河やガラス・オルゴールのお店、ルタオでスイーツ&#127856; 雪化粧の運河がとってもきれい&#10024;</p><span class="tag">観光</span></div>
+      </li>
+      <li class="ev">
+        <div class="t">14:40<small>約15分</small></div>
+        <div class="body"><h3>朝里川温泉へ</h3><p>小樽中心から車で約15分／朝里ICから約2分。</p><span class="tag move">車</span></div>
+      </li>
+      <li class="ev warm">
+        <div class="t">15:00</div>
+        <div class="body"><h3>おたる宏楽園に到着＆チェックイン &#127983;&#10024;</h3><p>庭園に囲まれた純和風の一軒宿へ。お部屋の露天につかりながら、雪化粧の日本庭園をひとりじめ…！最高のごほうび時間&#9832;&#10052;</p><span class="tag warmtag">客室露天</span><span class="tag warmtag">和室</span></div>
+      </li>
+      <li class="ev warm">
+        <div class="t">夕〜夜</div>
+        <div class="body"><h3>温泉 &rarr; お部屋で夕食 &#127862;</h3><p>自家温泉の大浴場は2か所（朝夜入替）。夕食は18:00〜19:30の好きな時間にお部屋で&#127860; 夜は客室露天で雪見の締め&#9832;</p><span class="tag warmtag">部屋食 18:00〜19:30</span></div>
+      </li>
+    </ul>
+
+    <p class="subhead">小樽のお昼候補</p>
+    <div class="cands">
+      <div class="item"><h5>おたる政寿司 本店（寿司）</h5><p>寿司屋通りの老舗。ランチ11:00〜15:00（LO14:30）、水曜休。王道の一軒&#127843;</p></div>
+      <div class="item"><h5>みよ福（寿司）</h5><p>高級ネタでも高コスパと評判。気軽に満足したい時に。</p></div>
+      <div class="item"><h5>伊勢鮨（寿司）</h5><p>質重視で落ち着いた名店。</p></div>
+      <div class="item"><h5>若鶏時代なると 本店（小樽名物）</h5><p>若鶏の半身揚げ発祥のお店。小樽のソウルフード&#128020; 11:00〜。</p></div>
+      <div class="item"><h5>中華食堂 桂苑（小樽名物）</h5><p>小樽名物あんかけ焼きそば。小樽駅から徒歩3分。</p></div>
+      <div class="item"><h5>かま栄（食べ歩き）</h5><p>できたてのパンロールが名物&#127838; 堺町の工場直売店はカフェ＆見学も。</p></div>
+      <div class="item"><h5>小樽洋菓子舗ルタオ 本店（スイーツ）</h5><p>看板のドゥーブルフロマージュ&#127856; 堺町通りで休憩に。</p></div>
+    </div>
+
+    <div class="card">
+      <h4>&#127983; おたる宏楽園 客室・温泉・食事</h4>
+      <p class="sub">朝里川温泉・自家源泉／入湯税込み料金</p>
+      <dl>
+        <dt>客室</dt><dd>露天風呂付客室「メゾネットタイプ（階段付）」。2階の和室で、客室内の階段を使ってお風呂（露天）へ。洗面・温水洗浄トイレ・冷暖房・Wi-Fi・シャワー・空気清浄機・冷蔵庫。禁煙。定員2〜4名。</dd>
+        <dt>大浴場</dt><dd>自家温泉が2か所。朝と夜で入れ替わり。</dd>
+        <dt>夕食</dt><dd>北海道の食材を中心とした日本料理に、フレンチを2品ほど。2〜3名はお部屋で（4名以上・洋室は個室食事処）。18:00〜19:30（ラストオーダー）。</dd>
+        <dt>朝食</dt><dd>専用会場「花音（かのん）」で和食中心のセット。7:00〜10:00（ラストオーダー9:30）。</dd>
+        <dt>チェックイン</dt><dd>15:00</dd>
+        <dt>チェックアウト</dt><dd>11:00</dd>
+      </dl>
+      <a class="btn" href="https://reserve.489ban.net/client/otaru-kourakuen/0/plan/room/45885" target="_blank" rel="noopener">客室の写真・詳細を見る（公式ページ）&#128248;</a>
+      <p class="cnote">カーナビ注意：「宏楽園」で検索すると裏側に出てしまうので、セイコーマート横の「宏楽園」正門から入る&#128663;</p>
+    </div>
+  </section>
+
+  <p class="divider">&#10052;　&#10052;　&#10052;</p>
+
+  <!-- DAY 3 -->
+  <section class="day">
+    <div class="day-head">
+      <div class="day-num">3</div>
+      <div class="day-meta"><p class="d">12月13日（日）</p><p class="s">朝の露天でのんびり &rarr; 観光 &rarr; 新千歳から帰路 &#9992;</p></div>
+    </div>
+    <ul class="tl">
+      <li class="ev warm">
+        <div class="t">朝</div>
+        <div class="body"><h3>朝風呂からの、できたて朝ごはん &#9832;&#127834;</h3><p>目覚めたら、まずはお部屋の露天へ&#9832; 雪景色をふたりじめ&#10052; あたたまったら花音であつあつの和朝食を&#127753;（7:00〜10:00・LO 9:30）</p><span class="tag warmtag">朝風呂</span></div>
+      </li>
+      <li class="ev">
+        <div class="t">11:00</div>
+        <div class="body"><h3>チェックアウト</h3><p>フライトは夜だから、午後もゆっくりできる&#128524;</p></div>
+      </li>
+      <li class="ev">
+        <div class="t">昼〜夕</div>
+        <div class="body"><h3>小樽 or 札幌でもう少し観光 &#128247;</h3><p>行き足りなかった街でランチや買い物 &rarr; 高速で新千歳方面へ。</p><span class="tag">観光</span><span class="tag move">高速</span></div>
+      </li>
+      <li class="ev">
+        <div class="t">夕方</div>
+        <div class="body"><h3>新千歳空港でひと休み &#128717;</h3><p>空港内でグルメやスイーツ、お土産選びも&#127862; 搭乗手続きは出発30分前までに。</p><span class="tag">空港グルメ</span></div>
+      </li>
+    </ul>
+
+    <div class="flight">
+      <div class="pl">&#9992;</div>
+      <div class="fmain">
+        <div class="froute">新千歳 <b>21:00</b> &rarr; 羽田 <b>22:40</b></div>
+        <div class="fsub">SKY730 ／ スカイマーク</div>
+        <div class="fchips"><span>予約番号 1134</span><span>座席 9H</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="note">
+    <b>&#9992; フライトまとめ</b><br>
+    往路 12/11（金）SKY705　羽田 08:15 → 新千歳 09:55／予約 1085・座席 9A<br>
+    復路 12/13（日）SKY730　新千歳 21:00 → 羽田 22:40／予約 1134・座席 9H<br>
+    ＊搭乗手続き・手荷物預けは出発30分前まで、保安検査は15分前までに。
+  </div>
+
+  <p class="foot">
+    ※食事やホテル、各日の観光は当日に決定でOK。時刻や営業時間は変わることがあるので、当日最新をご確認ください。冬は雪で遅れることもあるので、余裕を持って楽しみましょう&#9924;
+  </p>
+
+</div>
+</body>
+</html>
