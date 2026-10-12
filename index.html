@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
 <style>
   :root{
     --ink:#1c2531; --ink-soft:#4a5568; --snow:#f6f8fb; --paper:#ffffff;
@@ -122,7 +123,7 @@
   <section class="day">
     <div class="day-head">
       <div class="day-num">1</div>
-      <div class="day-meta"><p class="d">12月11日（金）</p><p class="s">いざ北海道へ！札幌でランチ＆観光 &#128031;&#10024;</p></div>
+      <div class="day-meta"><p class="d">12月11日（金）</p><p class="s">いざ北海道へ！羊ヶ丘と札幌さんぽ &#128017;&#10024;</p></div>
     </div>
 
     <div class="flight">
@@ -134,35 +135,131 @@
       </div>
     </div>
 
-    <p class="lead"><b>ざっくりこんな流れ &#9992;</b><br>10時ごろ新千歳でお迎え &rarr; ランチ＆観光（順番は自由！）&rarr; 夜は大通のイルミ＆〆パフェ &rarr; 大通付近のホテルで1泊 &#127769;</p>
+    <p class="lead"><b>ざっくりこんな流れ &#9992;</b><br>10時ごろ新千歳でお迎え &rarr; 羊ヶ丘でひと休み &rarr; ホテルに車＆荷物を置いて札幌さんぽ &rarr; 夕方は大通イルミ＆クリスマス市 &rarr; 夜は〆パフェ &rarr; すすきの泊 &#127769;</p>
 
     <ul class="tl">
       <li class="ev">
         <div class="t">09:55</div>
-        <div class="body"><h3>新千歳空港 着・お迎え &#128075;</h3><p>合流したら、車で札幌方面へ出発！ &#128663;</p><span class="tag move">車</span></div>
+        <div class="body"><h3>新千歳空港 着・お迎え &#128075;</h3><p>合流したら、車で羊ヶ丘方面へ出発！ &#128663;</p><span class="tag move">車</span></div>
       </li>
       <li class="ev">
-        <div class="t">昼〜<br>午後</div>
-        <div class="body"><h3>ランチ＆観光（順番は自由に！）&#127837;</h3><p>早めにランチ→午後たっぷり観光でも、先に観光してから遅めランチでもOK。お店はその日の気分で&#9834;（観光は下の候補から）</p><span class="tag">気分で</span><span class="tag">選ぶ</span></div>
+        <div class="t">昼</div>
+        <div class="body"><h3>羊ヶ丘展望台でひと休み &#128017;</h3><p>クラーク像と雪原で記念写真&#128247; 焼きとうもろこし・じゃがバター・ソフトクリームで腹ごしらえ&#127805;&#129364;&#127846;（眺めメインでサクッと）</p><span class="tag">眺め</span><span class="tag">食べる</span></div>
+      </li>
+      <li class="ev">
+        <div class="t">午後</div>
+        <div class="body"><h3>ホテルに車＆荷物を置いて、札幌さんぽ &#128694;</h3><p>市街に着いたら、まずホテルに車と荷物を預けて身軽に！ あとは徒歩＆地下街で中心部めぐり（下の候補から気分で）</p><span class="tag move">車→徒歩</span><span class="tag">街あるき</span></div>
       </li>
       <li class="ev warm">
-        <div class="t">夕〜夜</div>
-        <div class="body"><h3>大通のイルミネーション &amp; 〆パフェ &#10024;&#127848;</h3><p>12/11はさっぽろホワイトイルミネーション開催中！大通をおさんぽ。すすきので夜パフェ（佐藤／INITIAL）も&#9834;</p><span class="tag warmtag">イルミ</span><span class="tag warmtag">甘いもの</span></div>
+        <div class="t">夕方</div>
+        <div class="body"><h3>大通でイルミ＆ミュンヘン・クリスマス市 &#10024;&#127863;</h3><p>イルミを散歩しながら食べ歩き！ ホットワイン（グリューワイン）で乾杯&#127863; ドイツ屋台のプレッツェルやグリルチキン、ドイツ料理で夕ごはんも（くわしくは下のカード）</p><span class="tag warmtag">イルミ</span><span class="tag warmtag">食べ歩き</span></div>
+      </li>
+      <li class="ev warm">
+        <div class="t">夜</div>
+        <div class="body"><h3>すすきので〆パフェ &#127848;</h3><p>締めはやっぱり夜パフェ！「佐藤」や「INITIAL」が定番人気&#9834;</p><span class="tag warmtag">甘いもの</span></div>
       </li>
       <li class="ev warm">
         <div class="t">泊</div>
-        <div class="body"><h3>札幌大通付近のホテルへ &#127970;</h3><p>朝食が美味しいみたい&#9834; ゆっくり休んで明日にそなえよう&#128564;</p></div>
+        <div class="body"><h3>ベッセルホテルカンパーナすすきの &#127970;</h3><p>すすきの駅すぐ、サウナ付き大浴場でリラックス&#9832; 名物の朝食ビュッフェ（海鮮・勝手丼・北海道グルメ）が楽しみ&#9834;</p></div>
       </li>
     </ul>
 
-    <p class="mini">&#127873; どこかでお土産も買いたい♪（新千歳空港・大通・白い恋人パークなどで）</p>
+    <p class="mini">&#127873; どこかでお土産も買いたい♪（新千歳空港・大通・狸小路などで）</p>
 
-    <p class="subhead">午後〜夜の観光候補（気分でどれでも！）</p>
+    <p class="subhead">位置関係マップ</p>
+    <div class="card" style="padding:14px 14px 10px">
+      <div id="sap-map" style="height:340px;width:100%;border-radius:12px;overflow:hidden;border:1px solid var(--line)"></div>
+      <p style="font-size:11.5px;color:var(--ink-soft);margin:8px 2px 2px;line-height:1.9">&#9312; 狸小路/AOAO &#9313; 大通/テレビ塔 &#9314; 時計台 &#9315; 赤れんが &#9316; 札幌駅/JRタワー ／ <b style="color:var(--pine)">H</b> ベッセル（すすきの泊）</p>
+      <p style="font-size:10.5px;color:var(--ink-soft);margin:4px 2px 0;line-height:1.6">※地図はGitHub Pagesなどの公開ページで表示されます（アプリ内プレビューでは出ないことがあります）。</p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script>
+    (function(){try{var el=document.getElementById('sap-map');if(!el||typeof L==='undefined')return;
+    var spots=[{n:'1',t:'狸小路/AOAO',lat:43.0576,lng:141.3532},{n:'2',t:'大通公園/テレビ塔',lat:43.0611,lng:141.3564},{n:'3',t:'時計台',lat:43.0626,lng:141.3535},{n:'4',t:'赤れんが庁舎',lat:43.0645,lng:141.3481},{n:'5',t:'札幌駅/JRタワー',lat:43.0681,lng:141.3524}];
+    var hotel={t:'ベッセル（すすきの泊）',lat:43.0535,lng:141.3497};
+    var map=L.map(el,{scrollWheelZoom:false});
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
+    function badge(txt,color,size){size=size||24;return L.divIcon({className:'',html:'<div style="background:'+color+';color:#fff;width:'+size+'px;height:'+size+'px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.45)">'+txt+'</div>',iconSize:[size,size],iconAnchor:[size/2,size/2]});}
+    var pts=[];spots.forEach(function(sp){L.marker([sp.lat,sp.lng],{icon:badge(sp.n,'#c97e2c')}).addTo(map).bindTooltip(sp.t);pts.push([sp.lat,sp.lng]);});
+    L.marker([hotel.lat,hotel.lng],{icon:badge('H','#3f6b57',28)}).addTo(map).bindTooltip(hotel.t);pts.push([hotel.lat,hotel.lng]);
+    map.fitBounds(pts,{padding:[30,30]});setTimeout(function(){map.invalidateSize();},250);
+    }catch(e){}})();
+    </script>
+
+    <p class="subhead">おすすめルート</p>
+    <div class="card" style="padding:14px 14px 10px">
+      <svg viewBox="0 0 360 486" width="100%" style="height:auto;display:block" font-family="'Zen Kaku Gothic New',sans-serif" role="img" aria-label="札幌中心部の散策ルート図">
+        <line x1="44" y1="50" x2="44" y2="450" stroke="var(--line)" stroke-width="4" stroke-linecap="round"/>
+        <text x="52" y="97" fill="var(--ink-soft)" font-size="10">徒歩 約8分</text>
+        <text x="52" y="180" fill="var(--ink-soft)" font-size="10">徒歩 約10分</text>
+        <text x="52" y="255" fill="var(--ink-soft)" font-size="10">徒歩 約5分</text>
+        <text x="52" y="330" fill="var(--ink-soft)" font-size="10">徒歩 約5分</text>
+        <text x="52" y="410" fill="var(--ink-soft)" font-size="10">徒歩 約7分</text>
+
+        <circle cx="44" cy="50" r="15" fill="var(--lamp-deep)"/>
+        <text x="44" y="55" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">5</text>
+        <text x="70" y="47" fill="var(--ink)" font-size="14" font-weight="700">JRタワーT38・札幌駅</text>
+        <text x="70" y="63" fill="var(--ink-soft)" font-size="11">展望室 740円／〜22:00</text>
+
+        <circle cx="44" cy="140" r="15" fill="var(--lamp-deep)"/>
+        <text x="44" y="145" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">4</text>
+        <text x="70" y="137" fill="var(--ink)" font-size="14" font-weight="700">赤れんが庁舎</text>
+        <text x="70" y="153" fill="var(--ink-soft)" font-size="11">入館 300円／〜21:00</text>
+
+        <circle cx="44" cy="215" r="15" fill="var(--lamp-deep)"/>
+        <text x="44" y="220" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">3</text>
+        <text x="70" y="212" fill="var(--ink)" font-size="14" font-weight="700">札幌市時計台</text>
+        <text x="70" y="228" fill="var(--ink-soft)" font-size="11">大人 350円／〜17:10</text>
+
+        <circle cx="44" cy="290" r="15" fill="var(--lamp-deep)"/>
+        <text x="44" y="295" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">2</text>
+        <text x="70" y="287" fill="var(--ink)" font-size="14" font-weight="700">大通公園・テレビ塔</text>
+        <text x="70" y="303" fill="var(--ink-soft)" font-size="11">展望台1,000円／夜はイルミ会場</text>
+
+        <circle cx="44" cy="365" r="15" fill="var(--lamp-deep)"/>
+        <text x="44" y="370" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">1</text>
+        <text x="70" y="362" fill="var(--ink)" font-size="14" font-weight="700">狸小路・AOAO</text>
+        <text x="70" y="378" fill="var(--ink-soft)" font-size="11">水族館2,200円〜／アーケード</text>
+
+        <circle cx="44" cy="450" r="16" fill="var(--pine)"/>
+        <text x="44" y="455" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">発</text>
+        <text x="70" y="447" fill="var(--ink)" font-size="14" font-weight="700">すすきの（ベッセル泊）</text>
+        <text x="70" y="463" fill="var(--ink-soft)" font-size="11">車＆荷物を置いて出発</text>
+      </svg>
+      <p style="font-size:12px;color:var(--ink-soft);margin:8px 2px 4px;line-height:1.75">&#9312;すすきの発 &rarr; 北へ &#9312;狸小路/AOAO &rarr; &#9313;大通/テレビ塔 &rarr; &#9314;時計台 &rarr; &#9315;赤れんが &rarr; &#9316;札幌駅/JRタワー。夕方は&#9313;大通へ戻ってイルミ＆クリスマス市 &rarr; 徒歩でホテルへ&#127970;（全区間 地下街でつながり、すすきの↔札幌駅は約2km）</p>
+    </div>
+
+    <p class="subhead">街なかでサクッと巡れる（中心部）</p>
     <div class="cands">
-      <div class="item"><h5>&#127775; 藻岩山ロープウェイ</h5><p>日本新三大夜景＆「恋人の聖地」。山頂に幸せの鐘＆ハート南京錠。冬期11:00〜22:00。夜景デートの本命&#10024;</p></div>
-      <div class="item"><h5>&#127876; 大通公園（ホワイトイルミネーション）</h5><p>12/11は開催中！16:30〜22:00・無料。ミュンヘン・クリスマス市も同時開催で、あったかい屋台も&#9749;</p></div>
-      <div class="item"><h5>&#128017; 羊ヶ丘展望台</h5><p>クラーク像と真っ白な雪原。冬はチューブそりや無料ミニスキー、マシュマロ焼き・線香花火まで！9:00〜18:00。</p></div>
-      <div class="item"><h5>&#127851; 白い恋人パーク</h5><p>チョコ工場見学と欧風ガーデン。冬の夜はイルミがきらきら。焼きたてお菓子やソフトも&#127846; 10:00〜18:00。</p></div>
+      <div class="item"><h5>&#128081; 札幌市時計台</h5><p>札幌のシンボルで記念撮影。8:45〜17:10（入館17:00）／大人350円。20〜30分でサクッと。</p></div>
+      <div class="item"><h5>&#128225; さっぽろテレビ塔</h5><p>大通公園の東端。展望台から街を一望、夜はイルミも見下ろせる&#10024; 9:00〜22:00（最終21:50）／展望台1,000円。</p></div>
+      <div class="item"><h5>&#127984; 北海道庁 赤れんが庁舎</h5><p>2025年リニューアル。館内に「白い恋人」のカフェやショップ、冬は前庭でスノーファンタジー。8:45〜21:00／入館300円。</p></div>
+      <div class="item"><h5>&#128722; 狸小路商店街＋AOAO SAPPORO</h5><p>屋根付きアーケードで食べ歩き＆買い物。水族館AOAO（moyuk内／10:00〜22:00・最終21:00／大人2,200円〜・地下街直結）は屋内で雪でも安心。</p></div>
+      <div class="item"><h5>&#127956; JRタワー展望室T38</h5><p>地上160mから札幌を一望。札幌駅直結。10:00〜22:00（最終21:30）／大人740円。</p></div>
+    </div>
+
+    <div class="card">
+      <h4>&#127876; 大通会場（夜のおたのしみ）</h4>
+      <p class="sub">さっぽろホワイトイルミネーション ＆ ミュンヘン・クリスマス市</p>
+      <dl>
+        <dt>イルミ</dt><dd>大通会場など街なかがきらめく。夕方（16:30ごろ）点灯。</dd>
+        <dt>クリスマス市</dt><dd>大通公園1・2丁目。2026/11/20〜12/25、11:00〜21:00（ラストオーダー20:45）。</dd>
+        <dt>ホットワイン</dt><dd>グリューワイン専門店「グリューザウバー」やドイツ料理「サンセバスティアン」などのブースで&#127863;</dd>
+        <dt>屋台ごはん</dt><dd>プレッツェル、グリルチキン、ドイツ料理、焼きアーモンドなど。夕食にもぴったり&#127789;</dd>
+        <dt>おみやげ</dt><dd>スノードームやオーナメントの雑貨ブースも。ホットワインの記念マグ（デポジット制）は持ち帰れることが多い。</dd>
+      </dl>
+    </div>
+
+    <div class="card">
+      <h4>&#127970; ベッセルホテルカンパーナすすきの</h4>
+      <p class="sub">1日目の宿（すすきの）</p>
+      <dl>
+        <dt>場所</dt><dd>地下鉄すすきの駅4番出口から徒歩4〜5分（中央区南5条西6）。大通・狸小路も徒歩圏。</dd>
+        <dt>お風呂</dt><dd>サウナ付きの大浴場（宿泊者無料）。木の香りでリラックス&#9832;</dd>
+        <dt>朝食</dt><dd>名物の和洋ビュッフェ。海鮮の勝手丼やスープカレーなど北海道グルメが充実&#127844;</dd>
+        <dt>駐車場</dt><dd>立体駐車場あり（約80台・先着順・<b>高さ2m制限</b>）／平面2台は要予約。</dd>
+        <dt>IN / OUT</dt><dd>チェックイン14:00 ／ チェックアウト11:00</dd>
+      </dl>
     </div>
   </section>
 
@@ -205,7 +302,7 @@
       </li>
     </ul>
 
-    <p class="subhead">小樽のお昼候補</p>
+    <p class="subhead">小樽のお昼候補（寿司が本命♪ 気分で変えてもOK）</p>
     <div class="cands">
       <div class="item"><h5>おたる政寿司 本店（寿司）</h5><p>寿司屋通りの老舗。ランチ11:00〜15:00（LO14:30）、水曜休。王道の一軒&#127843;</p></div>
       <div class="item"><h5>みよ福（寿司）</h5><p>高級ネタでも高コスパと評判。気軽に満足したい時に。</p></div>
